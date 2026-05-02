@@ -60,7 +60,7 @@ VALUES
 
 #Analysis 
 
---This query compares the how revenue vary across different industries. 
+1. How much revenue varies across each industries?  
 
 SELECT industry, 
 COUNT(company_name) AS Number_of_Companies,
@@ -72,7 +72,7 @@ FROM fortune_companies
 GROUP BY industry; 
 
 
---Which industries have the highest average number of employees per industry?
+2. Which industries have the highest average number of employees per industry?
 
 
 SELECT industry,
@@ -83,8 +83,8 @@ ORDER BY Avg_employee_per_industry DESC;
 
 
 
---This query creates a category that indicates if a company offers healthcare benefits by indicating 
-'Yes'. Then, the query shows the company with the highest revenue that provides healthcare benefits. 
+3. This query creates a category that indicates if a company offers healthcare benefits by indicating 
+'Yes'. Then, the query orders the company with the high to low in revenue and filters companies with healthcare benefits. 
 
 SELECT *,
 CASE WHEN healthcare_benefits = '1' Then 'Yes'
@@ -95,7 +95,7 @@ Where Offers_Healthcare = 'Yes'
 ORDER BY revenue DESC; 
 
 
---This query compares the average tenure by industry. 
+4. What is the average tenure by industry. 
 
 SELECT industry,
 ROUND(AVG(avg_employee_tenure),2) Avg_tenure
@@ -103,8 +103,8 @@ FROM fortune_companies
 GROUP BY industry
 ORDER BY Avg_tenure DESC;
 
---Companies with healthcare benefits and maternity leave with their length of leave order by 
-company that offers the most maternity leave. 
+5. Which companies offer healthcare benefits and how long does each company offer for maternity leave. 
+--Orders by the company that offers the most weeks of maternity leave. 
 
 SELECT company_name,
 
