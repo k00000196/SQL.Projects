@@ -1,3 +1,6 @@
+# This dataset presents consumer trends that includes monthly, income, customer spending patterns, and customer behavior. 
+-This dataset was found from Kaggle. 
+
 CREATE TABLE `consumer_trends` (
   `age` int DEFAULT NULL,
   `monthly_income` int DEFAULT NULL,
@@ -30,7 +33,7 @@ CREATE TABLE `consumer_trends` (
 
 --Analyzing shopping preference
 
---This query analyzing the shopping preference by age (ages 18-77). 
+1. This query analyzing the shopping preference by age (ages 18-77). 
 
 SELECT age,
        shopping_preference,
@@ -40,13 +43,10 @@ GROUP BY age, shopping_preference
 ORDER BY age;
 
 
---Then, this query analyzing shopping preference betwween age group. This is a common age group used 
-in surverys. 
+2. What is the shopping preference preferred from each age group? 
 
 --Age Groups : 
 --18-24, 25-34, 35-44, 45-54, 55-64, and 65+. 
-
---It compares the number of shopping preference each age group prefers; hybrid, online, and store. 
 
 SELECT 
 	CASE 
@@ -65,7 +65,7 @@ ORDER BY Age_Group;
 
 
 
---This query analyzes if tech_savy_score, daily internet hours, and smartphone usuage could be a factor to why each age group would choose their 
+3. This query analyzes if tech_savy_score, daily internet hours, and smartphone usuage could be a factor to why each age group would choose their 
 shopping preference. 
 
 
@@ -87,7 +87,8 @@ FROM consumer_trends
 GROUP BY Age_Group,shopping_preference
 ORDER BY Age_Group;
 
---How does daily internet and social media usage vary across different age groups?
+
+4. How does daily internet and social media usage vary across different age groups?
 
 SELECT age, 
 ROUND(AVG(daily_internet_hours),2)
