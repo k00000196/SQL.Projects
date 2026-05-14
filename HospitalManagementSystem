@@ -77,7 +77,7 @@ GROUP BY DAYNAME(appointment_Date)
 ORDER BY total_appointments DESC;
 
 
-6. Counts the number of helps per department. 
+6. Counts the number of helpers per department. 
 
 SELECT dept_Id, 
 COUNT(*) Number_Helpers
